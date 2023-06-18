@@ -14,9 +14,6 @@ enrollmentAccount=$(az rest --method get \
 tenantId=$(az account show --query tenantId -o tsv)
 
 
-# Create a new AAD App Registration
-# refer to this link https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application
-
 ## grant that service principal the ability to create subscriptions.
 # Get the billing role definition id for "Enrollment account subscription creator" role
 billing_role_definition_id=$(az rest --method GET --url "https://management.azure.com${enrollmentAccount}/billingRoleDefinitions?api-version=2020-05-01" --query "value[?properties.roleName=='Enrollment account subscription creator'].{id:id}" -o tsv)
@@ -26,6 +23,7 @@ az rest --method PUT --url "https://management.azure.com/${enrollmentAccount}/bi
 
 
 # Login as the principalId and create a subscription to confirm the delegation of permission is effective.
+# the service principal is crated in previous step. Follow 03 - Create Service Principal.sh
 az login --service-principal -u $clientid -p $password --tenant $tenantId --allow-no-subscriptions --output none
 
 ##### Important run next step just to test the service principal can create a subscription
