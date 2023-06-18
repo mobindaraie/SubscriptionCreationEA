@@ -22,9 +22,19 @@ Please refer to this [link](https://docs.microsoft.com/en-us/azure/active-direct
 ## Codes in this repo
 This repo contains the following codes:
 - *'03 - Create Service Principal.sh'*: This codes creates a Service Principal. You just need to have the right permission as per pre-requisite 3 above.
-- *'04 - sub-pre-requisites.sh'*: This code grants the right permission to the Service Principal. You need to be an Account Owner as per pre-requisite 2 above.
 
-## next steps
+  - logs in to Azure. User should have one of the roles highlighted in step 3 above.
+  - creates a Service Principal.
+  - creates a secret for the Service Principal.
+
+- *'04 - sub-pre-requisites.sh'*: This code grants the right permission to the Service Principal. You need to be an Account Owner as per pre-requisite 2 above.
+  - logs in to Azure. User should have one EA Account Owner role.
+  - Get's the first available EA Account ID.
+  - Grants the right permission (Enrollment account subscription creator) to the Service Principal.
+  - Log ins to Azure using the Service Principal credetials.
+  - Creates a subscription for validation purposes.
+
+## Next steps: create subscription (not covered in this repo)
 Once you completed step 3 and 4 you can programmatically create EA subcription using
 
 Option A. [REST, PowerShell, or Azure CLI](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement?tabs=rest#create-subscriptions-under-a-specific-enrollment-account)
