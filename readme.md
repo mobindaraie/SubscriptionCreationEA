@@ -8,7 +8,7 @@ For more information refer to original [documentation](https://learn.microsoft.c
 
 2- The Enterprise Administrator of your enrollment can make you an Account Owner. Please refer to this [link](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/direct-ea-administration#add-an-account-and-account-owner) for more information on how to do this.
 
-3- You need to create a Service Principal. You must have sufficient Azure AD Permission *Application.ReadWrite.All*. This permission is available to following [Azure AD Built in roles](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference): 
+3- You need to create a Service Principal. You must have sufficient Azure AD Permission *Application.ReadWrite.All*. This permission is available in following [Azure AD Built in roles](https://learn.microsoft.com/en-us/azure/active-directory/roles/permissions-reference): 
 - Global Administrator
 - Application Administrator
 - Cloud Application Administrator
